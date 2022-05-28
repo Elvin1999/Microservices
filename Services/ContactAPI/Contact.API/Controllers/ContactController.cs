@@ -24,11 +24,25 @@ namespace Contact.API.Controllers
             return _contactService.GetContactById(Id);
         }
 
+
+        [HttpDelete("{Id}")]
+        public IActionResult Delete(int Id)
+        {
+            _contactService.Delete(Id);
+            return Ok();
+        }
+
         [HttpGet("")]
         public List<ContactDTO> GetAll()
         {
             return _contactService.GetAll();
         }
         
+        [HttpPost("")]
+        public ContactDTO Add(ContactDTO contact)
+        {
+              _contactService.Add(contact);
+            return contact;
+        }
     }
 }

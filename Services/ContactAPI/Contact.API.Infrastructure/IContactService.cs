@@ -11,5 +11,7 @@ namespace Contact.API.Infrastructure
     {
         public ContactDTO GetContactById(int id);
         public List<ContactDTO> GetAll();
+        public void Add(ContactDTO contact);
+        public void Delete(int id);
     }
 }

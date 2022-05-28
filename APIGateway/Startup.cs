@@ -29,6 +29,7 @@ namespace APIGateway
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddCors();
             services.AddControllers();
             services.AddOcelot();
             services.AddSwaggerGen(c =>
@@ -48,6 +49,12 @@ namespace APIGateway
             }
 
             //app.UseHttpsRedirection();
+
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials()); // allow credentials
 
             app.UseRouting();
 
