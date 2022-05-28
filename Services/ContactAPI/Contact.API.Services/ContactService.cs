@@ -19,5 +19,30 @@ namespace Contact.API.Services
                 LastName = "Axmedli"
             };
         }
+
+        public List<ContactDTO> GetAll()
+        {
+            return new List<ContactDTO>()
+            {
+                new ContactDTO
+                {
+                     Id= new Random().Next(1,100000),
+                     FirstName="Ali",
+                     LastName="Aliyev"
+                },
+                new ContactDTO
+                {
+                     Id= new Random().Next(1,100000),
+                     FirstName="Aysel",
+                     LastName="Aliyeva"
+                },
+                new ContactDTO
+                {
+                     Id= new Random().Next(1,100000),
+                     FirstName="Tural",
+                     LastName="Aliyev"
+                }
+            };
+        }
     }
 }

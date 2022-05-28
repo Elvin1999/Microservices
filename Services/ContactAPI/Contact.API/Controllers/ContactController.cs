@@ -2,6 +2,7 @@
 using Contact.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace Contact.API.Controllers
 {
@@ -22,5 +23,12 @@ namespace Contact.API.Controllers
         {
             return _contactService.GetContactById(Id);
         }
+
+        [HttpGet("")]
+        public List<ContactDTO> GetAll()
+        {
+            return _contactService.GetAll();
+        }
+        
     }
 }
