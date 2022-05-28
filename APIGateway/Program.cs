@@ -24,6 +24,7 @@ namespace APIGateway
             })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.UseUrls("https://*:22950");
                     webBuilder.UseStartup<Startup>();
                 });
     }
